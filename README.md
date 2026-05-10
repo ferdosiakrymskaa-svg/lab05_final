@@ -637,7 +637,7 @@ EXPECT_CALL(*from, Unlock());
 `./build/check`:
 ```sh
 Running main() from /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/src/gtest_main.cc
-[==========] Running 17 tests from 4 test suites.
+[==========] Running 18 tests from 5 test suites.
 [----------] Global test environment set-up.
 [----------] 4 tests from AccountBehaviourTest
 [ RUN      ] AccountBehaviourTest.LockUnlock
@@ -677,6 +677,11 @@ Balance 2 is 1200
 [       OK ] RealTransaction.SaveToDataBaseExecution (0 ms)
 [----------] 1 test from RealTransaction (0 ms total)
 
+[----------] 1 test from TransactionDestructor
+[ RUN      ] TransactionDestructor.IsCalled
+[       OK ] TransactionDestructor.IsCalled (0 ms)
+[----------] 1 test from TransactionDestructor (0 ms total)
+
 [----------] 4 tests from DifferentBalances/AccountBalanceTest
 [ RUN      ] DifferentBalances/AccountBalanceTest.InitialBalance/0
 [       OK ] DifferentBalances/AccountBalanceTest.InitialBalance/0 (0 ms)
@@ -689,15 +694,176 @@ Balance 2 is 1200
 [----------] 4 tests from DifferentBalances/AccountBalanceTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 17 tests from 4 test suites ran. (0 ms total)
-[  PASSED  ] 17 tests.
-
-```
-
-
+[==========] 18 tests from 5 test suites ran. (0 ms total)
+[  PASSED  ] 18 tests.
 
 
 ```
+`lcov --capture --directory build --output-file coverage_raw.info --ignore-errors mismatch,inconsistent`:
+
+<details>
+  <summary>Вывод команды </summary>
+
+  ```sh
+  Capturing coverage data from build
+geninfo cmd: '/usr/local/bin/geninfo build --toolname lcov --call-from-lcov --output-filename coverage_raw.info --ignore-errors mismatch --ignore-errors inconsistent'
+Found gcov version: 13.3.0
+Using intermediate gcov format
+Recording 'internal' directories:
+	/home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/build
+	build
+Writing temporary data to /tmp/geninfo_dateGhW
+Scanning build for .gcda files ...
+Found 4 data files in build
+using: chunkSize: 1, nchunks:4, intervalLength:0
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_DefaultFee_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:28: 28 -> 30 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_DefaultFee_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:28: 30 -> 28 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_DefaultFee_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:28: 30 -> 28 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN27TransactionTest_SetFee_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:32: 32 -> 35 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN27TransactionTest_SetFee_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:32: 35 -> 32 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN27TransactionTest_SetFee_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:32: 35 -> 32 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN32TransactionTest_SameAccount_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:38: 38 -> 40 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN32TransactionTest_NegativeSum_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:43: 45 -> 43 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN32TransactionTest_NegativeSum_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:43: 45 -> 43 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN32TransactionTest_NegativeSum_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:43: 45 -> 43 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN29TransactionTest_TooSmall_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:48: 50 -> 48 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN29TransactionTest_TooSmall_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:48: 50 -> 48 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN29TransactionTest_TooSmall_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:48: 50 -> 48 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_FeeExceeds_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:53: 58 -> 53 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_FeeExceeds_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:53: 58 -> 53 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_FeeExceeds_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:53: 58 -> 53 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN31TransactionTest_Successful_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:61: 61 -> 79 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN35TransactionTest_NotEnoughFunds_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:82: 82 -> 100 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN44RealTransaction_SaveToDataBaseExecution_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:103: 103 -> 110 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN44RealTransaction_SaveToDataBaseExecution_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:103: 110 -> 103 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN44RealTransaction_SaveToDataBaseExecution_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:103: 110 -> 103 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN35TransactionDestructor_IsCalled_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:112: 116 -> 112 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN35TransactionDestructor_IsCalled_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:112: 116 -> 112 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN35TransactionDestructor_IsCalled_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp:112: 116 -> 112 while capturing from build/CMakeFiles/check.dir/tests/test_transaction.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN38AccountBalanceTest_InitialBalance_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:12: 12 -> 14 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN36AccountBehaviourTest_LockUnlock_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:30: 30 -> 35 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN51AccountBehaviourTest_ChangeBalanceWhenUnlocked_Test8TestBodyEv at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:37: 37 -> 39 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN51AccountBehaviourTest_ChangeBalanceWhenUnlocked_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:37: 39 -> 37 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN51AccountBehaviourTest_ChangeBalanceWhenUnlocked_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:37: 39 -> 37 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN49AccountBehaviourTest_ChangeBalanceWhenLocked_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:41: 45 -> 41 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN49AccountBehaviourTest_ChangeBalanceWhenLocked_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:41: 45 -> 41 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN49AccountBehaviourTest_ChangeBalanceWhenLocked_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:41: 45 -> 41 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN37AccountBehaviourTest_IdIsCorrect_TestD2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:47: 49 -> 47 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN37AccountBehaviourTest_IdIsCorrect_TestD0Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:47: 49 -> 47 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+lcov: WARNING: (inconsistent) mismatched end line for _ZN37AccountBehaviourTest_IdIsCorrect_TestC2Ev at /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp:47: 49 -> 47 while capturing from build/CMakeFiles/check.dir/tests/test_account.cpp.gcda
+Finished processing 4 GCDA files
+Apply filtering..
+Finished filter file processing
+Finished .info-file creation
+Summary coverage rate:
+  source files: 65
+  lines.......: 77.0% (1716 of 2230 lines)
+  functions...: 79.0% (1337 of 1693 functions)
+Filter suppressions:
+  region:
+    2 instances
+Message summary:
+  35 warning messages:
+    inconsistent: 35
+  1 ignore message:
+    inconsistent: 1
+
+  ```
+</details>
+
+```sh
+lcov --extract coverage_raw.info '*/banking/Account.cpp' '*/banking/Transaction.cpp' --output-file coverage.info
+lcov --list coverage.info
+
+```
+<details>
+  <summary>Вывод команды </summary>
+
+  ```sh
+  Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/banking/Account.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/banking/Transaction.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/mock_classes.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_account.cpp
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/tests/test_transaction.cpp
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googlemock/include/gmock/gmock-actions.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googlemock/include/gmock/gmock-cardinalities.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googlemock/include/gmock/gmock-matchers.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googlemock/include/gmock/gmock-nice-strict.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googlemock/include/gmock/gmock-spec-builders.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googlemock/include/gmock/internal/gmock-internal-utils.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/gtest-assertion-result.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/gtest-matchers.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/gtest-message.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/gtest-param-test.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/gtest-printers.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/gtest.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/internal/gtest-internal.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/internal/gtest-param-util.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/internal/gtest-port.h
+Excluding /home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/third-party/gtest/googletest/include/gtest/internal/gtest-type-util.h
+Excluding /usr/include/c++/13/bits/alloc_traits.h
+Excluding /usr/include/c++/13/bits/allocated_ptr.h
+Excluding /usr/include/c++/13/bits/allocator.h
+Excluding /usr/include/c++/13/bits/atomic_base.h
+Excluding /usr/include/c++/13/bits/basic_string.h
+Excluding /usr/include/c++/13/bits/basic_string.tcc
+Excluding /usr/include/c++/13/bits/char_traits.h
+Excluding /usr/include/c++/13/bits/charconv.h
+Excluding /usr/include/c++/13/bits/cpp_type_traits.h
+Excluding /usr/include/c++/13/bits/functional_hash.h
+Excluding /usr/include/c++/13/bits/hashtable.h
+Excluding /usr/include/c++/13/bits/hashtable_policy.h
+Excluding /usr/include/c++/13/bits/invoke.h
+Excluding /usr/include/c++/13/bits/move.h
+Excluding /usr/include/c++/13/bits/new_allocator.h
+Excluding /usr/include/c++/13/bits/ptr_traits.h
+Excluding /usr/include/c++/13/bits/shared_ptr.h
+Excluding /usr/include/c++/13/bits/shared_ptr_base.h
+Excluding /usr/include/c++/13/bits/std_function.h
+Excluding /usr/include/c++/13/bits/stl_algobase.h
+Excluding /usr/include/c++/13/bits/stl_construct.h
+Excluding /usr/include/c++/13/bits/stl_function.h
+Excluding /usr/include/c++/13/bits/stl_iterator.h
+Excluding /usr/include/c++/13/bits/stl_iterator_base_funcs.h
+Excluding /usr/include/c++/13/bits/stl_iterator_base_types.h
+Excluding /usr/include/c++/13/bits/stl_pair.h
+Excluding /usr/include/c++/13/bits/stl_set.h
+Excluding /usr/include/c++/13/bits/stl_tree.h
+Excluding /usr/include/c++/13/bits/stl_uninitialized.h
+Excluding /usr/include/c++/13/bits/stl_vector.h
+Excluding /usr/include/c++/13/bits/unique_ptr.h
+Excluding /usr/include/c++/13/bits/unordered_map.h
+Excluding /usr/include/c++/13/bits/vector.tcc
+Excluding /usr/include/c++/13/ext/aligned_buffer.h
+Excluding /usr/include/c++/13/ext/alloc_traits.h
+Excluding /usr/include/c++/13/ext/atomicity.h
+Excluding /usr/include/c++/13/initializer_list
+Excluding /usr/include/c++/13/new
+Excluding /usr/include/c++/13/string_view
+Excluding /usr/include/c++/13/tuple
+Excluding /usr/include/c++/13/typeinfo
+Excluding /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h
+Removed 63 files
+Writing data to coverage.info
+Summary coverage rate:
+  source files: 2
+  lines.......: 100.0% (44 of 44 lines)
+  functions...: 100.0% (16 of 16 functions)
+Message summary:
+  no messages were reported
+                      |Lines       |Functions  
+Filename              |Rate     Num|Rate    Num
+===============================================
+[/home/ilyasov_ilya/ferdosiakrymskaa-svg/workspace/projects/lab05/lab05_final_edit/lab05/banking/]
+Account.cpp           | 100%     13| 100%     7
+Transaction.cpp       | 100%     31| 100%     9
+===============================================
+                Total:| 100%     44| 100%    16
+Message summary:
+  no messages were reported
+
+  ```
+</details>
 
 ## Вывод
 В результате проделанной лабораторной работы мы научились реализовывать тесты используя мок-объекты, кроме того проверяли покрываемость кода на сайте `Coveralls.io`.
