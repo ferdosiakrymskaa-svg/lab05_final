@@ -19,10 +19,10 @@ jobs:
         run: ./build/check
       - name: Coverage
         run: |
-          lcov --capture --directory build --output-file coverage_raw.info --ignore-errors mismatch,unexecuted
+          lcov --capture --directory build --output-file coverage_raw.info --ignore-errors mismatch,inconsistent
           lcov --extract coverage_raw.info '*/banking/Account.cpp' '*/banking/Transaction.cpp' --output-file coverage.info
-          lcov --remove coverage.info '/usr/*' --output-file coverage.info --ignore-errors unused
           lcov --list coverage.info
+      
       
       - name: Coveralls
         uses: coverallsapp/github-action@v2
